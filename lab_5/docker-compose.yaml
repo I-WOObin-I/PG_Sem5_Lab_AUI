@@ -1,37 +1,25 @@
 version: '3.9'
 services:
-  nginx:
-   container_name: some-nginx
-   image: mynginx
-   restart: always
-   ports:
-   - 80:80
-   - 81:81
-   - 443:443
-   depends_on:
-   - app
-   networks:
-      internal_nw:
-        ipv4_address: 192.168.0.2
 
-
-  app:
-    container_name: some-app
-    image: "app"
-    restart: always
-    expose:
-      - "8500"
-      - "8080"
+  myapp:
+    container_name: myapp
+    build: myapp
     ports:
      - 8500:8500
      - 8080:8080
     networks:
-      internal_nw:
-        ipv4_address: 192.168.0.3
+      - internal_nw
+
+  mynginx:
+   container_name: mynginx
+   build: mynginx
+   ports:
+   - 80:80
+   - 81:81
+   - 443:443
+   networks:
+     - internal_nw
 
 networks:
   internal_nw:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.0.0/16

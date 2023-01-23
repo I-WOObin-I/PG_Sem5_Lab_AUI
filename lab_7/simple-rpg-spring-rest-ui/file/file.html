@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="planetary info"/>
+    <meta name="keywords" content="planetary info"/>
+    <meta name="author" content="Michal Lubinski"/>
+    <title>Planets</title>
+    <link rel="stylesheet" href="../styles.css"/>
+    <script src="../script.js"  defer="defer"></script>
+    <script type="module" src="file.js" defer="defer"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>planetary info</h1>
+    </header>
+
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="../index.html">main</a></li>
+            <li><a href="../starsystem_list/starsystem_list.html">star systems</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-section">
+        <article class="text--justified">
+            <header><h2>Add file:</h2></header>
+            <section>
+                <div class="details-grid">
+                    <form id="infoForm">
+                        <label for="title">Title:</label><br>
+                        <input type="text" id="title" name="title" required><br>
+                        <label for="author">Author:</label><br/>
+                        <input type="text" id="author" name="author"required><br/>
+                        <label for="file">File: </label>
+                        <input class="ui-control ui-button" id="file" name="file" type="file"/>
+                        <input class="ui-control ui-button" type="submit" value="Upload"/>
+                    </form>
+                </div>
+            </section>
+        </article>
+    </section>
+
+    <footer class="footer">
+        <p>ML</p>
+    </footer>
+</div>
+</body>
+</html>

@@ -15,4 +15,10 @@
       <module name="simple-rpg" target="11" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="planets_info_ui" options="-parameters" />
+      <module name="simple-rpg" options="-parameters" />
+    </option>
+  </component>
 </project>

@@ -2,9 +2,12 @@ package pl.edu.pg.eti.kask.rpg.configuration;
 
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
+import pl.edu.pg.eti.kask.rpg.entity.File;
 import pl.edu.pg.eti.kask.rpg.entity.Planet;
 import pl.edu.pg.eti.kask.rpg.entity.StarSystem;
+import pl.edu.pg.eti.kask.rpg.service.FileService;
 import pl.edu.pg.eti.kask.rpg.service.PlanetService;
 import pl.edu.pg.eti.kask.rpg.service.StarSystemService;
 
@@ -30,15 +33,25 @@ public class InitializedData {
      */
     private final PlanetService planetService;
 
+
+    private final FileService fileService;
+    private final Environment environment;
+
+
+
+
+
     /**
      *
      * @param starSystemService service for managing characters
      * @param planetService service for managing professions
      */
     @Autowired
-    public InitializedData(StarSystemService starSystemService, PlanetService planetService) {
+    public InitializedData(StarSystemService starSystemService, PlanetService planetService, FileService fileService, Environment environment) {
         this.starSystemService = starSystemService;
         this.planetService = planetService;
+        this.fileService = fileService;
+        this.environment = environment;
     }
 
     /**
@@ -106,6 +119,17 @@ public class InitializedData {
         planetService.create(svarog);
         planetService.create(noveria);
         planetService.create(morana);
+
+        String fileStorage = environment.getProperty("fileTransfer.fileStorage.path");
+        System.out.println(fileStorage);
+
+        File normandy = File.builder()
+                .title("Normandy")
+                .author("Admin")
+                .filePath(fileStorage + "/normandy.jpg")
+                .build();
+
+        fileService.create(normandy);
 
     }
 

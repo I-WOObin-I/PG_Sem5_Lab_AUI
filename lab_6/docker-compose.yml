@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=adminadmin
+      - MARIADB_DATABASE=fileTransfer
+    networks:
+      - internal_nw
+
+  myapp:
+    container_name: myapp
+    build: myapp
+    ports:
+     - 9300:8080
+    environment:
+      - DB_HOST=mariadb
+    volumes:
+      - G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_6/files:/files
+    networks:
+      - internal_nw
+
+  mynginx:
+   container_name: mynginx
+   build: mynginx
+   ports:
+   - 80:80
+   - 81:81
+   - 443:443
+   networks:
+     - internal_nw
+
+  
+
+networks:
+  internal_nw:
+    driver: bridge

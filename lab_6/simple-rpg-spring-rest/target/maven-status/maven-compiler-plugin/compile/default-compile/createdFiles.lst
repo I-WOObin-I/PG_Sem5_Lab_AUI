@@ -1,0 +1,16 @@
+pl\edu\pg\eti\kask\rpg\dto\GetFilesResponse$File.class
+pl\edu\pg\eti\kask\rpg\dto\CreateFileRequest.class
+pl\edu\pg\eti\kask\rpg\repository\FileRepository.class
+pl\edu\pg\eti\kask\rpg\entity\File$FileBuilder.class
+pl\edu\pg\eti\kask\rpg\entity\File.class
+pl\edu\pg\eti\kask\rpg\dto\GetFilesResponse$File$FileBuilder.class
+pl\edu\pg\eti\kask\rpg\controller\FileController.class
+pl\edu\pg\eti\kask\rpg\dto\CreateFileRequest$CreateFileRequestBuilder.class
+pl\edu\pg\eti\kask\rpg\utils\FileUtils.class
+pl\edu\pg\eti\kask\rpg\dto\GetFileResponse$GetFileResponseBuilder.class
+pl\edu\pg\eti\kask\rpg\dto\GetFileResponse.class
+pl\edu\pg\eti\kask\rpg\service\FileService.class
+pl\edu\pg\eti\kask\rpg\dto\GetFilesResponse.class
+pl\edu\pg\eti\kask\rpg\dto\GetFilesResponse$GetFilesResponseBuilder.class
+pl\edu\pg\eti\kask\rpg\repository\ContentRepository.class
+pl\edu\pg\eti\kask\rpg\entity\File$FileBuilderImpl.class

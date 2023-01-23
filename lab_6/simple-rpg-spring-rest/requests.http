@@ -40,6 +40,31 @@ Content-Disposition: form-data; name="image"; filename="melogo.png'
 
 < ../../src/main/resources/pl/edu/pg/eti/kask/rpg/configuration/avatar/melogo.png
 --boundary--
+###
+
+# curl --location --request POST 'http://localhost:8080/api/files/'
+#--form 'title="dddddd"'
+#--form 'description="aaaaaa"'
+#--form 'content=@"/C:/Users/Ola/Downloads/Untitled.jpg"'
+POST http://localhost:9300/api/files
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+melogo
+--boundary
+Content-Disposition: form-data; name="author"
+
+myboi
+--boundary
+Content-Disposition: form-data; name="content"; filename="melogo.png"
+
+< G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/melogo.png
+--boundary--
+
+###
+
 
 ###
 
@@ -69,7 +94,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/api/starSystems/Sol/planets
+POST http://localhost:9300/api/starSystems/Pax/planets
 Content-Type: application/json
 
 {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/lab_7.iml" filepath="$PROJECT_DIR$/.idea/lab_7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-rpg-spring-rest-ui/planets_info_ui.iml" filepath="$PROJECT_DIR$/simple-rpg-spring-rest-ui/planets_info_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-rpg-spring-rest/simple-rpg.iml" filepath="$PROJECT_DIR$/simple-rpg-spring-rest/simple-rpg.iml" />
+    </modules>
+  </component>
+</project>

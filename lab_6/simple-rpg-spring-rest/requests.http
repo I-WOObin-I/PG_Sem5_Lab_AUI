@@ -1,0 +1,82 @@
+
+GET http://localhost:8080/api/planets
+
+###
+
+GET http://localhost:8080/api/planets/5
+
+###
+
+GET http://localhost:8080/api/planets/5/image
+
+###
+
+POST http://localhost:8080/api/planets
+Content-Type: application/json
+
+{
+  "name": "Mars",
+  "type": "rock",
+  "starSystem": "Pax"
+}
+
+###
+
+PUT http://localhost:8080/api/planets/7
+Content-Type: application/json
+
+{
+  "name": "Jennifer",
+  "type": "gas giant"
+}
+
+###
+
+PUT http://localhost:8080/api/planets/7/image
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="melogo.png'
+
+< ../../src/main/resources/pl/edu/pg/eti/kask/rpg/configuration/avatar/melogo.png
+--boundary--
+
+###
+
+DELETE http://localhost:8080/api/planets/4
+
+###
+
+GET http://localhost:8080/api/starSystems
+
+###
+
+GET http://localhost:8080/api/starSystems/Pax
+
+###
+
+GET http://localhost:8080/api/starSystems/Pax/planets
+
+###
+
+POST http://localhost:8080/api/starSystems
+Content-Type: application/json
+
+{
+  "name": "Sol",
+  "starCount": 1
+}
+
+###
+
+POST http://localhost:8080/api/starSystems/Sol/planets
+Content-Type: application/json
+
+{
+  "name": "Earth",
+  "type": "rock"
+}
+
+###
+
+DELETE http://localhost:8080/api/starSystems/Sol

@@ -1,0 +1,107 @@
+
+GET http://localhost:8080/api/planets
+
+###
+
+GET http://localhost:8080/api/planets/5
+
+###
+
+GET http://localhost:8080/api/planets/5/image
+
+###
+
+POST http://localhost:8080/api/planets
+Content-Type: application/json
+
+{
+  "name": "Mars",
+  "type": "rock",
+  "starSystem": "Pax"
+}
+
+###
+
+PUT http://localhost:8080/api/planets/7
+Content-Type: application/json
+
+{
+  "name": "Jennifer",
+  "type": "gas giant"
+}
+
+###
+
+PUT http://localhost:8080/api/planets/7/image
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="melogo.png'
+
+< ../../src/main/resources/pl/edu/pg/eti/kask/rpg/configuration/avatar/melogo.png
+--boundary--
+###
+
+# curl --location --request POST 'http://localhost:8080/api/files/'
+#--form 'title="dddddd"'
+#--form 'description="aaaaaa"'
+#--form 'content=@"/C:/Users/Ola/Downloads/Untitled.jpg"'
+POST http://localhost:9300/api/files
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+melogo
+--boundary
+Content-Disposition: form-data; name="author"
+
+myboi
+--boundary
+Content-Disposition: form-data; name="content"; filename="melogo.png"
+
+< G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/melogo.png
+--boundary--
+
+###
+
+
+###
+
+DELETE http://localhost:8080/api/planets/4
+
+###
+
+GET http://localhost:8080/api/starSystems
+
+###
+
+GET http://localhost:8080/api/starSystems/Pax
+
+###
+
+GET http://localhost:8080/api/starSystems/Pax/planets
+
+###
+
+POST http://localhost:8080/api/starSystems
+Content-Type: application/json
+
+{
+  "name": "Sol",
+  "starCount": 1
+}
+
+###
+
+POST http://localhost:9300/api/starSystems/Pax/planets
+Content-Type: application/json
+
+{
+  "name": "Earth",
+  "type": "rock"
+}
+
+###
+
+DELETE http://localhost:8080/api/starSystems/Sol

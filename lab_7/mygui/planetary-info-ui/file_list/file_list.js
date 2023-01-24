@@ -38,8 +38,7 @@ function displayFiles(files) {
 
 function createTableRow(file) {
     let tr = document.createElement('tr');
-    tr.appendChild(createTextCell(file.id));
-    tr.appendChild(createTextCell(file.author));
+    tr.appendChild(createTextCell(file.title));
     tr.appendChild(createButtonCell('download', () => downloadFile(file.id)));
     return tr;
 }

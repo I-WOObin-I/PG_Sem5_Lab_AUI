@@ -1,0 +1,7 @@
+{
+  "timestamp": "2023-01-24T07:45:58.927+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "",
+  "path": "/api/files"
+}

@@ -46,7 +46,7 @@ Content-Disposition: form-data; name="image"; filename="melogo.png'
 #--form 'title="dddddd"'
 #--form 'description="aaaaaa"'
 #--form 'content=@"/C:/Users/Ola/Downloads/Untitled.jpg"'
-POST http://localhost:9300/api/files
+POST http://localhost:81/api/files
 Content-Type: multipart/form-data; boundary=boundary
 
 --boundary

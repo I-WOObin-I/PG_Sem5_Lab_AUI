@@ -58,16 +58,12 @@ services:
   mygui1:
     container_name: mygui1
     build: mygui
-    ports:
-      - "8088:80"
     networks:
      - internal_nw
 
   mygui2:
     container_name: mygui2
     build: mygui
-    ports:
-      - "8089:80"
     networks:
      - internal_nw
 

@@ -2,7 +2,7 @@ import {getParameterByName} from '../js/dom_utils.js';
 import {getBackendUrl} from '../js/configuration.js';
 
 window.addEventListener('load', () => {
-    const newFile = document.getElementById('newFile')
+    const newFile = document.getElementById('fileForm')
     newFile.addEventListener('submit', event => {createFile(event)});
 
 
@@ -18,7 +18,7 @@ function createFile(event) {
     let request = new FormData();
     request.append("title",document.getElementById("title").value);
     request.append("author",document.getElementById("author").value);
-    request.append("file",document.getElementById("file").files[0]);
+    request.append("content",document.getElementById("content").files[0]);
 
     xhttp.send(request);
 

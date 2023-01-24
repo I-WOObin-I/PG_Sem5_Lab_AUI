@@ -10,26 +10,65 @@ services:
     networks:
       - internal_nw
 
-  myapp:
-    container_name: myapp
+  myapp1:
+    container_name: myapp1
     build: myapp
-    ports:
-     - 9300:8080
     environment:
       - DB_HOST=mariadb
     volumes:
       - G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_6/files:/files
+    links:
+      - mariadb
     networks:
       - internal_nw
 
-  mynginx:
-   container_name: mynginx
-   build: mynginx
+  myapp2:
+    container_name: myapp2
+    build: myapp
+    environment:
+      - DB_HOST=mariadb
+    volumes:
+      - G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_6/files:/files
+    links:
+      - mariadb
+    networks:
+      - internal_nw
+
+  mynginx1:
+   container_name: mynginx1
+   build: mynginx1
    ports:
-   - 80:80
-   - 81:81
-   - 443:443
+   - 9300:80
+   extra_hosts:
+     - "host.docker.internal:host-gateway"
    networks:
+     - internal_nw
+
+  mynginx2:
+   container_name: mynginx2
+   build: mynginx2
+   ports:
+   - 81:80
+   links:
+     - myapp1
+     - myapp2
+   networks:
+     - internal_nw
+
+  mygui1:
+    container_name: mygui1
+    build: mygui
+    ports:
+      - "8088:80"
+    networks:
+     - internal_nw
+
+  mygui2:
+    container_name: mygui2
+    build: mygui
+    ports:
+      - "8089:80"
+    networks:
      - internal_nw
 
   

@@ -22,5 +22,7 @@ function createFile(event) {
 
     xhttp.send(request);
 
+    window.location.replace('../file_list/file_list.html');
+
 
 }

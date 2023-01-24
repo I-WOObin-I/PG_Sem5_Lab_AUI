@@ -43,7 +43,7 @@ function createTableRow(starSystem) {
     let tr = document.createElement('tr');
     tr.appendChild(createTextCell(starSystem.name));
     tr.appendChild(createLinkCell('view', '../starsystem/starsystem.html?starSystem=' + starSystem.name));
-    tr.appendChild(createLinkCell('edit', '../starSystem_edit/starSystem_edit.html?starSystem=' + starSystem.name));
+    tr.appendChild(createLinkCell('edit', '../starsystem_edit/starsystem_edit.html?starSystem=' + starSystem.name));
     tr.appendChild(createButtonCell('delete', () => deleteStarSystem(starSystem.name)));
     return tr;
 }

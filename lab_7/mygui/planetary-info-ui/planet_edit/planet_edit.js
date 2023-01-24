@@ -104,6 +104,7 @@ function uploadImageAction(event) {
     request.append("image", document.getElementById('image').files[0]);
 
     xhttp.send(request);
+    window.location.replace('../starsystem/starsystem.html?starSystem=' + getParameterByName('starSystem'));
 
 
 }

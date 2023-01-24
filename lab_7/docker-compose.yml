@@ -16,7 +16,7 @@ services:
     environment:
       - DB_HOST=mariadb
     volumes:
-      - G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_6/files:/files
+      - C:/Users/lubin/Desktop/Studia/przedmiotowe/Sem_5/AUI/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_7/files:/files
     links:
       - mariadb
     networks:
@@ -28,7 +28,7 @@ services:
     environment:
       - DB_HOST=mariadb
     volumes:
-      - G:/Studia/foldery_przedmiotowe/Sem_5/AUI/lab/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_6/files:/files
+      - C:/Users/lubin/Desktop/Studia/przedmiotowe/Sem_5/AUI/PG_Sem5_Lab_AUI/PG_Sem5_Lab_AUI/lab_7/files:/files
     links:
       - mariadb
     networks:

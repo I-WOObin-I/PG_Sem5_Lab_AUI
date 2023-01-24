@@ -9,7 +9,6 @@ window.addEventListener('load', () => {
     imageForm.addEventListener('submit', event => uploadImageAction(event));
     
     fetchAndDisplayPlanet();
-
     /*
     function sendData() {
         const XHR = new XMLHttpRequest();
@@ -104,6 +103,8 @@ function uploadImageAction(event) {
     request.append("image", document.getElementById('image').files[0]);
 
     xhttp.send(request);
+
+    window.location.replace('../starsystem/starsystem.html?starSystem=' + getParameterByName('starSystem'));
 
 
 }
